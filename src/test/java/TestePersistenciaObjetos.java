@@ -1,8 +1,8 @@
 
-import br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.dao.PersistenciaJPA;
-import br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.model.Aluno;
-import br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.model.Disciplina;
-import br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.model.Professor;
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.dao.PersistenciaJPA;
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model.Aluno;
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model.Disciplina;
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model.Professor;
 import java.util.ArrayList;
 import java.util.Collection;
 import org.junit.After;
@@ -33,31 +33,15 @@ public class TestePersistenciaObjetos {
          
          Disciplina d = new Disciplina();
          d.setCarga_horaria(20);
-         
-         Aluno a1 = new Aluno();
-         a1.setNome("Aluno X");
-         a1.setTelefone("54996100976");
-         
-         Aluno a2 = new Aluno();
-         a2.setNome("Aluno Y");
-         a2.setTelefone("88886100976");
-         
-         Collection<Aluno> alunos = new ArrayList<>();
-         alunos.add(a1);
-         alunos.add(a2);
-         
          d.setProfessor(p);
-         d.setAlunos(alunos);
          
-         Collection<Disciplina> disciplinas = new ArrayList<>();
-         disciplinas.add(d);
+         Aluno a = new Aluno();
+         a.setNome("Aluno X");
+         a.setTelefone("9999999999");
+         a.setDisciplina(d);
          
-         p.setDisciplinas(disciplinas);
-        
-         jpa.persist(a1);
-         jpa.persist(a2);
-        
-         jpa.persist(d);
          jpa.persist(p);
+         jpa.persist(d);
+         jpa.persist(a);
      }
 }

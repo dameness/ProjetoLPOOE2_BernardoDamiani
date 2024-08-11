@@ -1,4 +1,4 @@
-package br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.model;
+package br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -14,25 +14,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_disciplina")
+@Table(name = "tb_disciplina")
 public class Disciplina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    
+
     private int carga_horaria;
-    
-    @ManyToOne( cascade = CascadeType.PERSIST)
-    @JoinColumn(name="professor_id")
+
+    @ManyToOne//(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "professor_id")
     private Professor professor;
-    
-    @OneToMany
-    @JoinTable(
-        name = "tb_disciplinas_alunos",
-        joinColumns = @JoinColumn(name = "disciplina_id"),
-        inverseJoinColumns = @JoinColumn(name = "aluno_id")
-    )
-    private Collection<Aluno> alunos;
 
     public Disciplina() {
     }
@@ -60,13 +52,4 @@ public class Disciplina implements Serializable {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
-
-    public Collection<Aluno> getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(Collection<Aluno> alunos) {
-        this.alunos = alunos;
-    }
-    
 }

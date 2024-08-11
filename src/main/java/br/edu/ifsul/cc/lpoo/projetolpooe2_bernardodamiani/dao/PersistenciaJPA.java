@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.dao;
+package br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
  *
  * @author vanessalagomachado
  */
-public class PersistenciaJPA implements InterfacePersistencia{
+public class PersistenciaJPA implements InterfacePersistencia {
 
     EntityManager entity;
     EntityManagerFactory factory;
@@ -21,10 +21,7 @@ public class PersistenciaJPA implements InterfacePersistencia{
         factory = Persistence.createEntityManagerFactory("pu_projeto_lpoo");
         entity = factory.createEntityManager();
     }
-    
-    
-    
-    
+
     @Override
     public Boolean conexaoAberta() {
         return entity.isOpen();
@@ -53,5 +50,5 @@ public class PersistenciaJPA implements InterfacePersistencia{
         entity.remove(o);
         entity.getTransaction().commit();
     }
-    
+
 }

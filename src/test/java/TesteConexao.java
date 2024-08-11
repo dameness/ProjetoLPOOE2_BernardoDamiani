@@ -1,6 +1,6 @@
 
 
-import br.edu.ifsul.cc.lpoo.projetolpooe1_bernardodamiani.dao.PersistenciaJPA;
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.dao.PersistenciaJPA;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
