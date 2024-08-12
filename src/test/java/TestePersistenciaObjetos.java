@@ -27,6 +27,7 @@ public class TestePersistenciaObjetos {
 
      @Test
      public void test() throws Exception {
+         
          Professor p = new Professor();
          p.setNome("Professor X");
          p.setSalario(5500.00);
@@ -43,5 +44,10 @@ public class TestePersistenciaObjetos {
          jpa.persist(p);
          jpa.persist(d);
          jpa.persist(a);
+         
+         Professor pTeste = new Professor();
+         pTeste.setNome("Professor Sem Disciplina");
+         pTeste.setSalario(5500.00);
+         jpa.persist(pTeste);
      }
 }

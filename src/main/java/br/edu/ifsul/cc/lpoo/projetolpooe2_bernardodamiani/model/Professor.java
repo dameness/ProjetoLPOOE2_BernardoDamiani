@@ -46,4 +46,9 @@ public class Professor implements Serializable {
     public void setSalario(Double salario) {
         this.salario = salario;
     }
+    
+    @Override
+    public String toString(){
+        return this.getNome();
+    }
 }

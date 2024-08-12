@@ -62,4 +62,9 @@ public class Aluno implements Serializable {
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
+    
+    @Override
+    public String toString(){
+        return this.getNome();
+    }
 }
