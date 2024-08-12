@@ -4,6 +4,7 @@
  */
 package br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.dao;
 
+import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model.Disciplina;
 import br.edu.ifsul.cc.lpoo.projetolpooe2_bernardodamiani.model.Professor;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -55,6 +56,10 @@ public class PersistenciaJPA implements InterfacePersistencia {
     
     public List<Professor> getProfessores(){  
         return entity.createQuery("select p from Professor p", Professor.class).getResultList();
+    }
+    
+     public List<Disciplina> getDisciplinas(){  
+        return entity.createQuery("select d from Disciplina d", Disciplina.class).getResultList();
     }
 
 }
